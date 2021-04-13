@@ -8,7 +8,7 @@ const path = require("path");
 const hbs = require("hbs");
 
 // paths for config
-const publicDirectoryPath = path.join(__dirname, "../public");
+const publicDirectoryPath = path.join(__dirname, "..");
 const viewPath = path.join(__dirname, "../templates/views");
 const partials = path.join(__dirname, "../templates/partials");
 
@@ -29,9 +29,7 @@ app.use(taskRouter);
 app.use(express.static(publicDirectoryPath));
 
 app.get("", (req, res) => {
-  res.render("index", {
-    title: "Home",
-  });
+  res.render("index");
 });
 
 app.get("/sign-up", (req, res) => {
