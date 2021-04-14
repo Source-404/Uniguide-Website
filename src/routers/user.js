@@ -39,7 +39,7 @@ router.post("/users/login", urlencodedParser, async (req, res) => {
     console.log(user);
     const token = await user.generateAuthToken();
     res.render("welcome", {
-      title: "welcome",
+      title: "Welcome",
       name: user.name,
     });
   } catch (e) {

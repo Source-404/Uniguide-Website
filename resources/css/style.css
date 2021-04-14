@@ -140,6 +140,7 @@ header {
   width: auto;
   float: left;
   margin-top: 10px;
+  border-color: rgb(189, 28, 49);
   border-radius: 50%;
   /* -webkit-filter: invert(100%);
   filter: invert(100%); */
