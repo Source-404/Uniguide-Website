@@ -27,7 +27,7 @@ buttonUp.addEventListener("click", async (e) => {
   console.log("i got clicked");
   console.log(nameUp.value);
 
-  fetch("http://localhost:3000/users", {
+  fetch("/users", {
     method: "POST",
     body: JSON.stringify({
       name: nameUp.value,
