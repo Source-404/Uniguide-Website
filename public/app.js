@@ -43,54 +43,34 @@ buttonUp.addEventListener("click", async (e) => {
   formUp.reset();
 });
 
-// const emailIn = document.getElementById("sign-in-name");
-// const passIn = document.getElementById("sign-in-password");
-// const formIn = document.querySelector(".sign-in-form");
+const emailIn = document.getElementById("sign-in-name");
+const passIn = document.getElementById("sign-in-password");
+const formIn = document.querySelector(".sign-in-form");
 
-// const buttonIn = document.getElementById("button-login");
+const buttonIn = document.getElementById("button-login");
 
-// var loggedUser;
-// buttonIn.addEventListener("click", async (e) => {
-//   e.preventDefault();
-//   console.log("login got clicked");
-//   console.log(emailIn.value);
+var loggedUser;
+buttonIn.addEventListener("click", async (e) => {
+  e.preventDefault();
+  console.log("login got clicked");
+  console.log(passIn.value);
 
-//   fetch("http://localhost:3000/users/login", {
-//     method: "POST",
-//     body: JSON.stringify({
-//       email: emailIn.value,
-//       password: passIn.value,
-//     }),
-//     headers: {
-//       "Content-type": "application/json; charset=UTF-8",
-//     },
-//   })
-//     .then((response, token) => response.json())
-//     .then((data) => {
-//       console.log(data.user);
-//       loggeduser = data.user;
-//       console.log(loggeduser);
-//       fetch("http://localhost:3000/welcome", {
-//         method: "POST",
-//         body: JSON.stringify({
-//           name: loggeduser.name,
-//         }),
-//         headers: {
-//           "Content-type": "application/json; charset=UTF-8",
-//         },
-//       })
-//         .then((response) => {
-//           console.log(response);
-//         })
-//         .catch((e) => {
-//           console.log("error in welcome");
-//         });
-//       console.log("?");
-//       formIn.reset();
-//       // location.href = "/welcome";
-//     })
-//     .catch((e) => {
-//       // replace with
-//       console.log("Invalid credential");
-//     });
-// });
+  try {
+    const response = await fetch("http://localhost:3000/users/login", {
+      method: "POST",
+      body: JSON.stringify({
+        email: emailIn.value,
+        password: passIn.value,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    });
+    const data = await response.json();
+    console.log(data);
+    loggedUser = data;
+    window.location.href = "/welcome";
+  } catch (e) {
+    console.log("something went wrong");
+  }
+});

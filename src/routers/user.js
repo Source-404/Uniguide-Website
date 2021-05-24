@@ -17,110 +17,114 @@ router.post("/users", async (req, res) => {
   }
 });
 
-// router.post("/users/login", async (req, res) => {
-//   try {
-//     const user = await User.findByCredentials(
-//       req.body.email,
-//       req.body.password
-//     );
-//     const token = await user.generateAuthToken();
-//     console.log("verified");
-//     res.send({ user, token });
-//   } catch (e) {
-//     res.status(400).send();
-//   }
-// });
-
-router.post("/users/login", urlencodedParser, async (req, res) => {
-  console.log("here");
+router.post("/users/login", async (req, res) => {
   try {
-    const user = await User.findByCredentials(req.body.user, req.body.pass);
-    console.log("verified");
-    console.log(user);
+    const user = await User.findByCredentials(
+      req.body.email,
+      req.body.password
+    );
     const token = await user.generateAuthToken();
-    res.render("welcome", {
-      title: "Welcome",
-      name: user.name,
-    });
+    console.log("verified");
+    res.send({ user, token });
   } catch (e) {
     res.status(400).send();
   }
 });
 
-router.get("/users/me", auth, async (req, res) => {
-  res.send(req.user);
-  //   const user = await User.find({});
-  //   try {
-  //     res.send(user);
-  //   } catch (e) {
-  //     res.status(500).send();
-  //   }
-
-  //   User.find({})
-  //     .then((users) => {
-  //       res.send(users);
-  //     })
-  //     .catch((e) => {
-  //       res.status(500).send();
-  //     });
-});
-
-router.get("/users/:id", async (req, res) => {
-  const _id = req.params.id;
-  console.log(_id);
-
+router.post("/users/logout", auth, async (req, res) => {
   try {
-    const user = await User.findById(_id);
-    if (!user) {
-      return res.status(404).send();
-    }
-    res.send(user);
+    req.user.tokens = req.user.tokens.filter((token) => {
+      return token.token !== req.token;
+    });
+    await req.user.save();
+    res.send();
   } catch (e) {
     res.status(500).send();
   }
-
-  //   User.findById(_id)
-  //     .then((user) => {
-  //       if (!user) {
-  //         return res.status(404).send();
-  //       }
-  //       res.send(user);
-  //     })
-  //     .catch((e) => {
-  //       res.status(500).send();
-  //     });
 });
 
-router.patch("/users/:id", async (req, res) => {
-  const updates = Object.keys(req.body);
+router.post("/users/logoutAll", auth, async (req, res) => {
+  try {
+    req.user.tokens = [];
+    await req.user.save();
+    res.send();
+  } catch (e) {
+    res.status(500).send();
+  }
+});
+
+const multer = require("multer");
+const upload = multer({
+  limits: {
+    fileSize: 1000000,
+  },
+  fileFilter(req, file, cb) {
+    if (!file.originalname.match(/\.(jpg||jpeg||png)$/)) {
+      return cb(new Error("Please upload a proper image"));
+    }
+    cb(undefined, true);
+  },
+});
+
+router.post(
+  "/users/me/avatar",
+  auth,
+  upload.single("avatar"),
+  async (req, res) => {
+    req.user.avatar = req.file.buffer;
+    await req.user.save();
+    res.send();
+  },
+  (error, req, res, next) => {
+    res.status(400).send({ err: error.message });
+  }
+);
+
+router.get("/users/me", auth, async (req, res) => {
+  res.send(req.user);
+});
+
+router.get("/users/:id/avatar", async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
-    updates.forEach((update) => (user[update] = req.body[update]));
 
-    await user.save();
-
-    // const user = await User.findByIdAndUpdate(req.params.id, req.body, {
-    //   new: true,
-    //   runValidators: true,
-    // });
-    if (!user) {
-      return res.status(404).send();
+    if (!user || !user.avatar) {
+      throw new Error();
     }
-    res.send(user);
+    res.set("Content-Type", "image/jgp");
+    res.send(user.avatar);
+  } catch (e) {
+    res.status(404).send();
+  }
+});
+
+router.patch("/users/me", auth, async (req, res) => {
+  const updates = Object.keys(req.body);
+  try {
+    updates.forEach((update) => (req.user[update] = req.body[update]));
+    await req.user.save();
+    res.send(req.user);
   } catch (e) {
     res.status(400).send();
   }
 });
 
-router.delete("/users/:id", async (req, res) => {
+router.delete("/users/me", auth, async (req, res) => {
   try {
-    const user = await User.findByIdAndDelete(req.params.id);
-    if (!user) {
-      return res.status(404).send();
-    }
-    res.send(user);
+    await req.user.remove();
+    res.send(req.user);
   } catch (e) {
-    res.status(500).send;
+    res.status(500).send();
+  }
+});
+
+router.delete("/users/me/avatar", auth, async (req, res) => {
+  try {
+    req.user.avatar = undefined;
+    await req.user.save();
+    res.send();
+  } catch (e) {
+    res.status(500).send();
   }
 });
 

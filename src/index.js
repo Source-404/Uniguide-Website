@@ -2,8 +2,10 @@ const express = require("express");
 require("./db/mongoose");
 const User = require("./models/user");
 const Task = require("./models/task");
+const Project = require("./models/project");
 const userRouter = require("./routers/user");
 const taskRouter = require("./routers/task");
+const projRouter = require("./routers/project");
 const path = require("path");
 const hbs = require("hbs");
 
@@ -13,7 +15,7 @@ const viewPath = path.join(__dirname, "../templates/views");
 const partials = path.join(__dirname, "../templates/partials");
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 // handle bars setup
 app.set("view engine", "hbs");
@@ -24,6 +26,7 @@ hbs.registerPartials(partials);
 app.use(express.json());
 app.use(userRouter);
 app.use(taskRouter);
+app.use(projRouter);
 
 //setup static directory to serve
 app.use(express.static(publicDirectoryPath));
@@ -51,6 +54,13 @@ app.post("/welcome", async (req, res) => {
   console.log(name);
 });
 
+app.get("/welcome", (req, res) => {
+  res.render("welcome", {
+    title: "Welcome",
+    name: "Some random name",
+  });
+});
+
 app.get("/log-in", (req, res) => {
   res.render("log-in", {
     title: "Log-in",
@@ -59,6 +69,10 @@ app.get("/log-in", (req, res) => {
 
 app.listen(port, () => {
   console.log("Server is up on port " + port);
+});
+
+app.get("/iphone/tester", (req, res) => {
+  res.send({ mssg: "Good job iphone tester" });
 });
 
 //background-color: #e67e22;
