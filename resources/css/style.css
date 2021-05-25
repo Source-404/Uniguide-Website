@@ -72,9 +72,10 @@ h2:after {
 }
 
 h3 {
-  font-size: 110%;
+  font-size: 90%;
   margin-bottom: 15px;
   text-align: center;
+  margin-top: 5px;
 }
 
 /*--------------------------*/
@@ -269,4 +270,13 @@ header {
 
 .info ion-icon {
   color: #e67e22;
+  height:30px;
+  width:30px;
+}
+
+.findusimg{
+  border: 2px solid #e67e22;
+  border-radius: 50%;
+  height:120px;
+  width:120px;
 }
