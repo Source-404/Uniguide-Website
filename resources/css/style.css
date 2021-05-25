@@ -280,3 +280,19 @@ header {
   height:120px;
   width:120px;
 }
+
+/*---------------------------*/
+/*Scroll bar*/
+/*---------------------------*/
+::-webkit-scrollbar {
+    width: 10px;
+    background: white;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px white;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background:#e67e22;
+    border-radius: 10px;
+}
