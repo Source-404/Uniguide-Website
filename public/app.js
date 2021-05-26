@@ -56,7 +56,7 @@ buttonIn.addEventListener("click", async (e) => {
   console.log(passIn.value);
 
   try {
-    const response = await fetch("http://localhost:3000/users/login", {
+    const response = await fetch("/users/login", {
       method: "POST",
       body: JSON.stringify({
         email: emailIn.value,
@@ -69,7 +69,8 @@ buttonIn.addEventListener("click", async (e) => {
     const data = await response.json();
     console.log(data);
     loggedUser = data;
-    window.location.href = "/welcome";
+
+    window.location.href = "/gallery";
   } catch (e) {
     console.log("something went wrong");
   }

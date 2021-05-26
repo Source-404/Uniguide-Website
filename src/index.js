@@ -3,6 +3,7 @@ require("./db/mongoose");
 const User = require("./models/user");
 const Task = require("./models/task");
 const Project = require("./models/project");
+const auth = require("./middleware/auth");
 const userRouter = require("./routers/user");
 const taskRouter = require("./routers/task");
 const projRouter = require("./routers/project");
@@ -41,6 +42,10 @@ app.get("/sign-up", (req, res) => {
   });
 });
 
+app.get("/gallery", (req, res) => {
+  res.render("gallery");
+});
+
 // app.post("/welcome", (req, res) => {
 //   // const name = req.query.name;
 //   res.render("welcome", {
@@ -49,30 +54,8 @@ app.get("/sign-up", (req, res) => {
 //   });
 // });
 
-app.post("/welcome", async (req, res) => {
-  const name = User(req.body.name);
-  console.log(name);
-});
-
-app.get("/welcome", (req, res) => {
-  res.render("welcome", {
-    title: "Welcome",
-    name: "Some random name",
-  });
-});
-
-app.get("/log-in", (req, res) => {
-  res.render("log-in", {
-    title: "Log-in",
-  });
-});
-
 app.listen(port, () => {
   console.log("Server is up on port " + port);
-});
-
-app.get("/iphone/tester", (req, res) => {
-  res.send({ mssg: "Good job iphone tester" });
 });
 
 //background-color: #e67e22;
