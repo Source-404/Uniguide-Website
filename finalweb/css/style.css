@@ -1,0 +1,298 @@
+/*--------------------------*/
+/* Basic setup */
+/*--------------------------*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #fff;
+  color: #555;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+
+/*--------------------------*/
+/* reusable stuff */
+/*--------------------------*/
+
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 80px;
+
+  transition: transform 1s, opacity 1s;
+}
+
+.section-hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: rgb(192, 174, 174);
+  font-size: 240%;
+  word-spacing: 4px;
+}
+
+h2 {
+  word-spacing: 2px;
+  font-size: 180%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h2:after {
+  display: block;
+  height: 2px;
+  background-color: #e67e22;
+  content: " ";
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+h3 {
+  font-size: 90%;
+  margin-bottom: 15px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+/*--------------------------*/
+/* Button stuff */
+/*--------------------------*/
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  padding: 10px 30px;
+  text-decoration: none;
+  border-radius: 200px;
+  border: 1px solid #e67e22;
+  transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #a15512;
+  border: 1px solid #a15512;
+}
+
+.btn-full {
+  background-color: #e67e22;
+  color: #fff;
+  margin-right: 15px;
+}
+.btn-ghost:hover,
+.btn-ghost:active {
+  color: #fff;
+}
+
+.btn-ghost {
+  color: #e67e22;
+}
+
+/*--------------------------*/
+/* Header stuff */
+/*--------------------------*/
+
+header {
+  background-image: linear-gradient(
+      rgba(15, 15, 15, 0.8),
+      rgba(15, 15, 15, 0.8)
+    ),
+    url(img/hero12.jpg);
+
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.hero-text-box {
+  position: absolute;
+  width: 1140px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+  float: left;
+  margin-top: 10px;
+  border-color: rgb(189, 28, 49);
+  border-radius: 50%;
+  /* -webkit-filter: invert(100%);
+  filter: invert(100%); */
+}
+
+.main-nav {
+  float: right;
+  list-style: none;
+  margin-top: 50px;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+  padding: 8px 0;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 90%;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+  border-bottom: 2px solid #e67e22;
+}
+
+/*--------------------------*/
+/* Feature stuff */
+/*--------------------------*/
+
+.long-copy {
+  line-height: 145%;
+  width: 70%;
+  margin: 0 15%;
+  text-align: center;
+}
+
+.box {
+  padding: 2%;
+}
+
+.box p {
+  font-size: 90%;
+  line-height: 145%;
+  word-spacing: 1px;
+}
+
+.box ion-icon {
+  font-size: 400%;
+  display: block;
+  color: #e67e22;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*--------------------------*/
+/* How it works stuff */
+/*--------------------------*/
+
+.section-steps {
+  background-color: rgb(253, 253, 253);
+}
+
+.steps-box:first-child {
+  text-align: right;
+  padding-right: 3%;
+  margin-top: 30px;
+}
+
+.steps-box:last-child {
+  padding-left: 3%;
+  margin-top: 60px;
+}
+
+.app-iphone {
+  width: 60%;
+}
+
+.works-step {
+  margin-bottom: 50px;
+}
+
+.works-step div {
+  color: #e67e22;
+  border: 2px solid #e67e22;
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  padding: 5px;
+  float: left;
+  font-size: 150%;
+  margin-right: 25px;
+}
+.btn-app img {
+  height: 60px;
+  width: 30%;
+
+  margin-right: 30px;
+  margin-top: 25px;
+}
+
+.ios {
+  margin-left: 10px;
+  border-radius: 15px;
+}
+
+/*--------------------------*/
+/* About us */
+/*--------------------------*/
+
+.card ion-icon {
+  font-size: 400%;
+  display: block;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.info ion-icon {
+  color: #e67e22;
+  height:30px;
+  width:30px;
+}
+
+.findusimg{
+  border: 2px solid #e67e22;
+  border-radius: 50%;
+  height:120px;
+  width:120px;
+}
+
+/*---------------------------*/
+/*Scroll bar*/
+/*---------------------------*/
+::-webkit-scrollbar {
+    width: 10px;
+    background: white;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px white;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background:#e67e22;
+    border-radius: 10px;
+}
