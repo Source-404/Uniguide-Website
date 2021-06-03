@@ -133,6 +133,18 @@ header {
   height: 100vh;
 }
 
+header.add {
+  background-image: linear-gradient(
+      rgba(15, 15, 15, 0.8),
+      rgba(15, 15, 15, 0.8)
+    ),
+    url(img/hero13.jpg) !important;
+
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
 .hero-text-box {
   position: absolute;
   width: 1140px;
@@ -417,7 +429,7 @@ section::after{
   transform: translateY(40px);
   transition: 0.5s;
 }
-.container .card .content .contentBx button {
+.container .card .content .contentBx button, button {
     padding: 10px 30px;
     font-weight: bold;
     font-size: 0.7em;
@@ -522,4 +534,21 @@ section::after{
   clip-path: inset(0 0 0 0);
   transition: 0.5s cubic-bezier(0, 0, 0, 1);
   display: none;
+}
+
+
+input[type="text"]{
+  width: 80%;
+  margin-left: 10%;
+  font-size: px;
+  padding: 1%;
+}
+
+.button-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+  flex-direction: column;
+
 }
