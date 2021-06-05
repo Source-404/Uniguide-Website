@@ -6,50 +6,116 @@
   <title>Uniguide</title>
   <link rel="stylesheet" href="css/profile.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;1,300;1,400&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="vendor/css/normalize.css" />
   <link rel="stylesheet" type="text/css" href="vendor/css/grid.css" />
 </head>
 
 <body>
-  <header>
-  <nav>
-    <div class="row">
-      <img src="../resources/img/logo3.png" alt="Uniguide logo" class="logo" />
-      <ul class="main-nav">
-        <li><a class="nav-links" href="gallery.html">Gallery</a></li>
-        <li><a class="nav-links" href="add.html">Add resources</a></li>
-        <li><a class="nav-links" href="#section--1">My Profile</a></li>
-        <li><a href="index.html">Log Out</a></li>
-      </ul>
-    </div>
-  </nav>
-  <div class="hero-text-box">
-    <h1>Public resources.<br />Take inspiration from</h1>
+  <div class="profilepic">
+    <img class="pic" src="img/dev.png" alt="Profile Picture">
   </div>
-</header>
-
-<section class="section-features sections" id="section--1">
-  <div class="row">
-    <h2>Upload</h2>
-    <p class="long-copy">
-        Upload your scanned project or pdf file. Make sure that the paper is clear and readable.
-    </p>
-    <div class="button-flex">
-
-
-    <a href="mailto: anmol.bansal2019@vitstudent.ac.in">
-        <img src="../resources/img/Group 16094.svg" style="padding-bottom: 5%;">
-    </a>
+  <header>
+    <nav>
+      <div class="row">
+        <img src="../resources/img/logo3.png" alt="Uniguide logo" class="logo" />
+        <ul class="main-nav">
+          <li><a class="nav-links" href="gallery.html">Gallery</a></li>
+          <li><a class="nav-links" href="add.html">Add resources</a></li>
+          <li><a class="nav-links" href="#section--1">My Profile</a></li>
+          <li><a href="index.html">Log Out</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="hero-text-box">
+      <h1>My Profile.<br />Introduce yourself <br/> to the world</h1>
     </div>
-    <p class="long-copy">
-        We currently accept documents via mail only, to authenticate the rights, quality and plagiarism.
-    </p>
-</div>
+  </header>
+  <!-- <div class="profileinfo">
+    Hi I am Dev Wadhwa
+  </div> -->
+  <div class="socialicon">
+    <div class="info">
+      <center>
+    <a href="https://www.linkedin.com/in/dev-wadhwa/" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
+    <a href="https://github.com/devwadhwa01" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+    <a href="https://mail.google.com/mail/?fs=1&tf=cm&to=devwadhwa01@gmail.com" target="_blank"><ion-icon name="mail-outline"></ion-icon></a>
+    </center>
+  </div>
+  </div>
+  <section class="section-features sections" id="section--1" style="padding-bottom: 25px;">
+    <div class="row">
+      <h2>My Projects
+      </h2>
+      <p class="long-copy">
+        Find your projects here!
+      </p>
+    </div>
   </section>
+  <section class="cards">
+
+    <input type="text" id="myInput" onkeyup="mySearchFunction()" placeholder="Search for Titles...">
+    <ul id="stateList" style="display: none;">
+      <!-- <li>Internet of Things</li> -->
+      <!-- <li>Blockchain India</li> -->
+      <li>Blockchain Technology</li>
+      <li>Cyber Security</li>
+      <!-- <li>Bitcoin Backbone</li> -->
+      <!-- <li>Bitcoin-NG</li> -->
+      <li>Artificial Intelligence</li>
+      <!-- <li>AI Social Human-Robot</li> -->
+      <!-- <li>Blockchain</li> -->
+      <!-- <li>Cyber Security</li> -->
+    </ul>
+
+    <div class="container">
+      <div class="card" id="Blockchain Technology">
+        <div class="content">
+          <div class="imgBx"><img src="../resources/res/3.png" alt="resources-Img"></div>
+          <div class="contentBx">
+            <h3> Blockchain Technology </h3>
+            <center>
+              <h5>Author: Dev Wadhwa</h5>
+              <span><br>
+                <a href="https://drive.google.com/file/d/1WdpVNxADCbUzK74HN2Wf_BOdog4nFNlf/view" target="_blank" style="text-decoration: none;">
+                  <button> Download </button></a></span>
+            </center>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="Cyber Security">
+        <div class="content">
+          <div class="imgBx"><img src="../resources/res/4.png" alt="resources-Img"></div>
+          <div class="contentBx">
+            <h3> Cyber Security </h3>
+            <h5>Author: Dev Wadhwa</h5>
+            <span><br>
+              <a href="https://drive.google.com/file/d/1bDXWziicwIxMAejXrqq-yMRW06BG5udb/view" target="_blank" style="text-decoration: none;">
+                <button> Download </button></a></span>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="Artificial Intelligence">
+        <div class="content">
+          <div class="imgBx"><img src="../resources/res/7.png" alt="resources-Img"></div>
+          <div class="contentBx">
+            <h3> Artificial Intelligence</h3>
+            <center>
+              <h5>Author: Dev Wadhwa </h5>
+              <span><br>
+                <a href="https://drive.google.com/file/d/1cn47Rhdd-OyRr-ybP7zWo_9HbDe0LnfQ/view" target="_blank" style="text-decoration: none;">
+                  <button> Download </button></a></span>
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/search.js"></script>
 
 </body>
 

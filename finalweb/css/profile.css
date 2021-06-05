@@ -91,6 +91,21 @@ h1 {
   word-spacing: 4px;
 }
 
+h2 {
+  word-spacing: 2px;
+  font-size: 180%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+h2:after {
+  display: block;
+  height: 2px;
+  background-color: #e67e22;
+  content: " ";
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
 
 header {
   background-image: linear-gradient(
@@ -122,4 +137,284 @@ header.add {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.profilepic{
+  position:absolute;
+  margin-top:12%;
+  margin-left:65%;
+}
+.pic{
+  border: 5px solid #e67e22;
+  border-radius: 50%;
+}
+.profileinfo{
+  background-color: black ;
+  /* opacity:0.5; */
+  color: #e67e22;
+  height:180px;
+  width:500px;
+  border-radius: 20px;
+  border: 5px solid black;
+  position: absolute;
+  top:73%;
+  right:6.5%;
+}
+.info ion-icon {
+  color: #e67e22;
+  height:30px;
+  width:30px;
+  margin-right: 20px;
+}
+.socialicon{
+  position: absolute;
+  top:80%;
+  right:17%;
+}
+section {
+  padding: 80px;
+  transition: transform 1s, opacity 1s;
+}
+
+section.cards{
+  padding: 80px;
+  padding-top: 0px;
+  transition: transform 1s, opacity 1s;
+}
+
+.section-hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+.long-copy {
+  line-height: 145%;
+  width: 70%;
+  margin: 0 15%;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+.container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 0;
+}
+
+.container .card {
+  position: relative;
+  width: 300px;
+  height: auto;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 10px;
+  box-shadow: 0 5px 15px rgba(230, 126, 34, 0.2);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+  /* backdrop-filter: blur(10px); */
+}
+
+.container .card .content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+/* .container .card:hover .content {
+  opacity: 1;
+  transform: translateY(-20px);
+} */
+
+.container .card .content .imgBx {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  border: 0px solid rgba(0, 0, 0, 0.25);
+}
+
+.container .card .content .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container .card .content .contentBx h3 {
+  /* color: #fff; */
+  display: flex;
+  font-size: 1em;
+  margin-block-start: 1.67em;
+  margin-block-end: 1.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.container .card .content .contentBx h5 {
+  /* color: #fff; */
+  display: block;
+  font-size: 0.8em;
+  font-weight: bold;
+
+}
+
+.container .card .content .contentBx span {
+  text-transform: initial;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.5s;
+}
+.container .card .content .contentBx button, button {
+    padding: 10px 30px;
+    font-weight: bold;
+    font-size: 0.7em;
+    text-decoration: none;
+    border-radius: 200px;
+    border: 1px solid #e67e22;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+    background-color: #e67e22;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.container .card:hover .content .contentBx span {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.container .card .sci {
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+}
+
+.container .card .sci li {
+  list-style: none;
+  margin: 0 10px;
+  transform: translateY(40px);
+  transition: 0.5s;
+  opacity: 0;
+  transition-delay: calc(0.1s * var(--i));
+}
+
+.container .card:hover .sci li {
+  transform: translateY(0px);
+  opacity: 1;
+}
+.container .card .sci li a {
+  /* color: #fff; */
+  font-size: 24px;
+}
+
+
+#switch {
+  width: 260px;
+  height: 50px;
+  margin: auto;
+  margin-top: 6vh;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  user-select: none;
+  cursor: pointer;
+}
+
+.inner-switch {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: inherit;
+  height: inherit;
+  text-transform: uppercase;
+  font-size: 0.65em;
+  letter-spacing: 0.2em;
+}
+
+.inner-switch:first-child {
+  background: #040404;
+  color: #e5e5e5;
+}
+
+.inner-switch:nth-child(2) {
+  background: dodgerblue;
+  color: #ffffff;
+  clip-path: inset(0 50% 0 0);
+  transition: 0.3s cubic-bezier(0, 0, 0, 1);
+}
+
+.toggle-switch {
+  width: 50%;
+  position: absolute;
+  height: inherit;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.toggle-switch p {
+  margin: auto;
+}
+
+.toggle-switch:nth-child(1) {
+  right: 0;
+}
+
+#team1 {
+  clip-path: inset(0 0 0 0);
+  transition: 0.5s cubic-bezier(0, 0, 0, 1);
+  display: flex;
+}
+
+#team2 {
+  clip-path: inset(0 0 0 0);
+  transition: 0.5s cubic-bezier(0, 0, 0, 1);
+  display: none;
+}
+
+
+input[type="text"]{
+  width: 80%;
+  margin-left: 10%;
+  font-size: px;
+  padding: 1%;
+}
+
+.button-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+  flex-direction: column;
+
+}
+
+#myInput{
+  margin-bottom:20px;
+  border:2px solid #e67e22;
+  border-radius: 50px;
+}
+input[type=text]:focus{
+  outline:none;
 }

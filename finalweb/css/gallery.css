@@ -318,7 +318,7 @@ header.add {
 /*Card Stuff*/
 /*---------------------------*/
 
-/* 
+/*
 section{
     position: relative;
 } */
@@ -543,6 +543,16 @@ input[type="text"]{
   font-size: px;
   padding: 1%;
 }
+
+#myInput{
+  margin-bottom:20px;
+  border:2px solid #e67e22;
+  border-radius: 50px;
+}
+input[type=text]:focus{
+  outline:none;
+}
+
 
 .button-flex{
   display: flex;
