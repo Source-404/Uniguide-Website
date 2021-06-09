@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" type="text/css" href="vendor/css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="vendor/css/grid.css" />
-    <link rel="stylesheet" type="text/css" href="resources/css/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="/vendor/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/vendor/css/grid.css" />
+    <link rel="stylesheet" type="text/css" href="/finalweb/css/gallery.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;1,300;1,400&display=swap"
@@ -16,171 +16,173 @@
     <header>
       <nav>
         <div class="row">
-          <img src="resources/img/logo3.png" alt="Uniguide logo" class="logo" />
+          <img src="../resources/img/logo3.png" alt="Uniguide logo" class="logo" />
           <ul class="main-nav">
-            <li><a class="nav-links" href="#section--1">Features</a></li>
-            <li><a class="nav-links" href="#section--2">How it works</a></li>
-            <li><a class="nav-links" href="#section--3">Find us</a></li>
-            <li><a href="/sign-up">Sign up</a></li>
+            <li><a class="nav-links" href="#section--1">Gallery</a></li>
+            <li><a class="nav-links" href="/add">Add resources</a></li>
+            <li><a class="nav-links" href="/profile">My Profile</a></li>
+            <li><a href="index.html">Log Out</a></li>
           </ul>
         </div>
       </nav>
       <div class="hero-text-box">
-        <h1>Public resources.<br />Share with the world</h1>
+        <h1>Public resources.<br />Take inspiration from</h1>
         <!-- <a class="btn btn-full" href="/sign-up">I am Ready !</a>
         <a class="btn btn-ghost btn--scroll-to" href="#">Show me more</a> -->
       </div>
     </header>
-    <section class="section-features sections" id="section--1">
+    <section class="section-features sections" id="section--1" style="padding-bottom: 25px;">
       <div class="row">
         <h2>Our Public Projects !</h2>
         <p class="long-copy">
-            Get inspiration and guidance from these resources, mind you these are 
-            owned by their respective owners and you can not claim any of these as your own. 
+            Get inspiration and guidance from these resources, mind you these are
+            owned by their respective owners and you can not claim any of these as your own.
         </p>
       </div>
       </section>
       <section class="cards">
-           <input type="text" id="myInput" onkeyup="searchTable()" placeholder="Search for names.." title="Type in a name">
-        <div class="container" id="team1">
-            <div class="card">
+           <input type="text" id="myInput" onkeyup="mySearchFunction()" placeholder="Search for Titles..">
+           <ul id="stateList" style="display: none;">
+            <li>Internet of Things</li>
+            <li>Blockchain India</li>
+            <li>Blockchain Technology</li>
+            <li>Cyber Security</li>
+            <li>Bitcoin Backbone</li>
+            <li>Bitcoin-NG</li>
+            <li>Artificial Intelligence</li>
+            <li>AI Social Human-Robot</li>
+            <li>Blockchain</li>
+            <li>Cyber Security</li>
+          </ul>
+
+        <div class="container">
+            <div class="card" id="Internet of Things">
                 <div class="content">
-                    <div class="imgBx"><img src="./resources/css/books/1.jpg" alt="resources-Img"></div>
+                    <div class="imgBx"><img src="../resources/res/1.png" alt="resources-Img"></div>
                     <div class="contentBx">
-                        <h3> Blockchain</h3> 
-                        <h5> Author: Niti Ayog</h5>
+                        <h3> Internet of Things</h3>
+                        <h5> Author: Sachin Kumar</h5>
                         <span><br>
-                        <a href="https://drive.google.com/file/d/1A0LKzU-t53b4nVGfHnbH8Fb42s6UtyR-/view" target="_blank" style="text-decoration: none;">
-                        <button> Download </button></a></span> 
+                        <a href="https://drive.google.com/file/d/1WTezE62jD30yQpPAPavuz161-X5HrrQg/view" target="_blank" style="text-decoration: none;">
+                        <button> Download </button></a></span>
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" id="Blockchain India">
                 <div class="content">
-                    <div class="imgBx"><img src="./resources/css/books/2.jpg" alt="resources-Img"></div>
+                    <div class="imgBx"><img src="../resources/res/2.png" alt="resources-Img"></div>
                     <div class="contentBx">
-                        <h3> Project 2</h3> 
-                        <h5>Author: Anmol Bansal </h5>
-                        <span> <br> <button> Download </button></span> 
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="content">
-                    <div class="imgBx"><img src="./resources/css/books/3.jpg" alt="resources-Img"></div>
-                    <div class="contentBx">
-                        <h3> Project 3 </h3> 
-                        <h5>Author: Anmol Bansal </h5>
-                        <span> <br> <button> Download </button></span> 
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="content">
-                    <div class="imgBx"><img src="./resources/css/books/4.png" alt="resources-Img"></div>
-                    <div class="contentBx">
-                        <h3> Project 4 </h3> 
-                        <h5>Author: Pao-Ann Hsuing</h5>
+                        <h3> Blockchain India</h3>
+                        <h5>Author: NITI Aayog </h5>
                         <span><br>
-                        <a href="https://drive.google.com/file/d/1EJP0Ppl3FAk2wXxmVrfKcaCmgzK1BtpV/view" target="_blank" style="text-decoration: none;">
-                        <button> Download </button></a></span> 
+                        <a href="https://drive.google.com/file/d/183IttyM5YbTNkScnJe0nn9gSFWwGRZEn/view" target="_blank" style="text-decoration: none;">
+                        <button> Download </button></a></span>
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" id="Blockchain Technology">
                 <div class="content">
-                    <div class="imgBx"><img src="./resources/css/books/5.jpg" alt="resources-Img"></div>
+                    <div class="imgBx"><img src="../resources/res/3.png" alt="resources-Img"></div>
                     <div class="contentBx">
-                        <h3> Project 5 </h3> 
-                        <h5>Author: Anmol Bansal </h5>
-                        <span> <br> <button> Download </button></span> 
+                        <h3> Blockchain Technology </h3>
+                        <h5>Author: Arup </h5>
+                        <span><br>
+                        <a href="https://drive.google.com/file/d/1WdpVNxADCbUzK74HN2Wf_BOdog4nFNlf/view" target="_blank" style="text-decoration: none;">
+                        <button> Download </button></a></span>
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" id="Cyber Security">
                 <div class="content">
-                    <div class="imgBx"><img src="./resources/css/books/6.jpg" alt="resources-Img"></div>
+                    <div class="imgBx"><img src="../resources/res/4.png" alt="resources-Img"></div>
                     <div class="contentBx">
-                        <h3> Project 6 </h3> 
-                        <h5>Author: Anmol Bansal </h5>
-                        <span> <br> <button> Download </button></span> 
+                        <h3> Cyber Security </h3>
+                        <h5>Author: Saloni Khurana</h5>
+                        <span><br>
+                        <a href="https://drive.google.com/file/d/1bDXWziicwIxMAejXrqq-yMRW06BG5udb/view" target="_blank" style="text-decoration: none;">
+                        <button> Download </button></a></span>
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" id="Bitcoin-NG">
                 <div class="content">
-                    <div class="imgBx"><img src="./resources/css/books/7.jpg" alt="resources-Img"></div>
+                    <div class="imgBx"><img src="../resources/res/6.png" alt="resources-Img"></div>
                     <div class="contentBx">
-                        <h3> Project 7 </h3> 
-                        <h5>Author: Anmol Bansal </h5>
-                        <span> <br> <button> Download </button></span> 
+                        <h3> Bitcoin-NG</h3>
+                        <!-- <h5>Author: Anmol Bansal </h5> -->
+                        <span><br>
+                        <a href="https://drive.google.com/file/d/1jax9fZZxxK_M3roTPRdHexAqlQyyOdH-/view" target="_blank" style="text-decoration: none;">
+                        <button> Download </button></a></span>
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" id="Artificial Intelligence">
                 <div class="content">
-                    <div class="imgBx"><img src="./resources/css/books/8.jpg" alt="resources-Img"></div>
+                    <div class="imgBx"><img src="../resources/res/7.png" alt="resources-Img"></div>
                     <div class="contentBx">
-                        <h3> Project 8 </h3> 
-                        <h5>Author: Anmol Bansal </h5>
-                        <span> <br> <button> Download </button></span> 
+                        <h3> Artificial Intelligence</h3>
+                        <h5>Author: Margaret A. Boden </h5>
+                        <span><br>
+                        <a href="https://drive.google.com/file/d/1cn47Rhdd-OyRr-ybP7zWo_9HbDe0LnfQ/view" target="_blank" style="text-decoration: none;">
+                        <button> Download </button></a></span>
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" id="AI Social Human-Robot">
                 <div class="content">
-                    <div class="imgBx"><img src="./resources/css/books/9.jpg" alt="resources-Img"></div>
+                    <div class="imgBx"><img src="../resources/res/8.png" alt="resources-Img"></div>
                     <div class="contentBx">
-                        <h3> Project 9 </h3> 
-                        <h5>Author: Anmol Bansal </h5>
-                        <span> <br> <button> Download </button></span> 
+                        <h3> AI Social Human-Robot</h3>
+                        <h5>Author: Severin Lemaignan</h5>
+                        <span><br>
+                        <a href="https://drive.google.com/file/d/1k8BDwqCzpY33P4lHjTUy61CVErecNbIt/view" target="_blank" style="text-decoration: none;">
+                        <button> Download </button></a></span>
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" id="Blockchain">
                 <div class="content">
-                    <div class="imgBx"><img src="./resources/css/books/10.jpg" alt="resources-Img"></div>
+                    <div class="imgBx"><img src="../resources/res/9.png" alt="resources-Img"></div>
                     <div class="contentBx">
-                        <h3> Project 10 </h3> 
-                        <h5>Author: Anmol Bansal </h5>
-                        <span> <br> <button> Download </button></span> 
+                        <h3> Blockchain </h3>
+                        <h5>Author: Pao Ann Hsuing </h5>
+                        <span><br>
+                        <a href="https://drive.google.com/file/d/1WTezE62jD30yQpPAPavuz161-X5HrrQg/view" target="_blank" style="text-decoration: none;">
+                        <button> Download </button></a></span>
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" id="Cyber Security">
                 <div class="content">
-                    <div class="imgBx"><img src="./resources/css/books/11.jpg" alt="resources-Img"></div>
+                    <div class="imgBx"><img src="../resources/res/10.png" alt="resources-Img"></div>
                     <div class="contentBx">
-                        <h3> Project 11 </h3> 
-                        <h5>Author: Anmol Bansal </h5>
-                        <span> <br> <button> Download </button></span> 
+                        <h3> Cyber Security</h3>
+                        <h5>Author: Nikhita Reddy</h5>
+                        <span><br>
+                        <a href="https://drive.google.com/file/d/17-9t8j_bNNAWf7zaMNGrcoVd0FeZpuoo/view" target="_blank" style="text-decoration: none;">
+                        <button> Download </button></a></span>
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" id="Bitcoin Backbone">
                 <div class="content">
-                    <div class="imgBx"><img src="./resources/css/books/12.jpg" alt="resources-Img"></div>
+                    <div class="imgBx"><img src="../resources/res/5.png" alt="resources-Img"></div>
                     <div class="contentBx">
-                        <h3> Project 12 </h3> 
-                        <h5>Author: Anmol Bansal </h5>
-                        <span> <br> <button> Download </button></span> 
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="content">
-                    <div class="imgBx"><img src="./resources/css/books/13.jpg" alt="resources-Img"></div>
-                    <div class="contentBx">
-                        <h3> Project 13 </h3> 
-                        <h5>Author: Anmol Bansal </h5>
-                        <span> <br> <button> Download </button></span> 
+                        <h3> Bitcoin Backbone</h3>
+                        <h5>Author: Juan A. Gray</h5>
+                        <span><br>
+                        <a href="https://drive.google.com/file/d/1sqiwwx8FEVV0S02urB6DGAbujy8RBOlf/view" target="_blank" style="text-decoration: none;">
+                        <button> Download </button></a></span>
                     </div>
                 </div>
             </div>
 
             </div>
-    
+
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-    <script src="resources/js/app.js"></script>
+    {{!-- <script src="js/app.js"></script> --}}
+    <script src="/finalweb/js/app.js"></script>
+    <script src="/finalweb/js/search.js"></script>
+    {{!-- <script src="js/search.js"></script> --}}
   </body>
 </html>

@@ -46,6 +46,12 @@ app.get("/gallery", (req, res) => {
   res.render("gallery");
 });
 
+app.get("/add", (req, res) => {
+  res.render("add");
+});
+app.get("/profile", (req, res) => {
+  res.render("profile");
+});
 // app.post("/welcome", (req, res) => {
 //   // const name = req.query.name;
 //   res.render("welcome", {
