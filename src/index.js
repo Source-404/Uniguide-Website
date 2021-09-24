@@ -36,6 +36,8 @@ app.get("", (req, res) => {
   res.render("index");
 });
 
+//routes for front-end
+
 app.get("/sign-up", (req, res) => {
   res.render("sign-up", {
     title: "Sign-up",
